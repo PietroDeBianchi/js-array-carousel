@@ -4,14 +4,43 @@ const imgArray = [];
 const imgListDom = document.querySelector('.imgList');
 // const for empty content
 let carouselContent = "";
+
 // now the cycle for the img <div>
 for (let i = 0; i < imgArray.length; i++ ) {
     newImgBox = `<div class="imgBox"><img src="${imgArray[i]}"></div>`;
  //change the img[i]
     carouselContent += newImgBox;
 };
+
 // set the img inside the <div class="imgList"> 
 imgListDom.innerHTML = carouselContent;
 // const for the <div class="imgBox">
-const imgBoxDom = document.getElementsByClassName('.imgBox');
-imgBoxDom[i].classList.add('show')
+const imgBoxDom = document.getElementsByClassName('imgBox');
+
+// do add show class to the img
+let presentImg = 0;
+imgBoxDom[presentImg].classList.add('show');
+
+// next e prev button const
+const nextDom = document.querySelector('#next');
+const prevDom = document.querySelector('#prev');
+
+nextDom.addEventListener ('click',
+function() {
+    if (presentImg < imgBoxDom.length - 1) {
+        imgBoxDom[presentImg].classList.remove('show');
+        presentImg++;
+        imgBoxDom[presentImg].classList.add('show');
+    }
+}
+);
+
+prevDom.addEventListener ('click',
+    function() {
+        if (presentImg > 0) {
+            imgBoxDom[presentImg].classList.remove('show');
+            presentImg--;
+            imgBoxDom[presentImg].classList.add('show');
+        }
+    }
+);
