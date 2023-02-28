@@ -4,3 +4,45 @@
     box-sizing: border-box;
     font-family: 'Martian Mono', monospace;
 }
+
+/* MAIN STYLE */
+.container {
+    width: 70vw;
+    margin: auto;
+}
+
+.carousel {
+    height: 70vh;
+    margin: 10vh 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.imgList, .imgBox, .miniatures {
+    height: 100%;
+}
+
+.imgList {
+    width: 100%;
+}
+
+.miniatures {
+    width: 20%;
+    background-color: gray;
+}
+
+.imgBox img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
