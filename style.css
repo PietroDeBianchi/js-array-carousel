@@ -14,10 +14,10 @@
 .carousel {
     height: 70vh;
     margin: 10vh 0;
-    position: relative;
     display: flex;
     justify-content: center;
     border: 1px solid black;
+    background-color: rgba(21, 15, 129, 0.7);
 }
 
 .imgList, .imgBox, .miniatures {
@@ -31,26 +31,27 @@
 .miniatures {
     width: 20%;
     background-color: gray;
+    position: relative;
 }
 
-.imgBox img {
+.imgBox {
+    display: none;
+}
+
+.image {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .show {
     display: block;
 }
 
-.hidden {
-    display: none;
-}
-
 .arrow {
     position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
+    transform: translatey(-50%);
+    left: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,12 +60,15 @@
     height: 48px;
     border-radius: 50%;
     cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 #prev {
-    left: 16px;
+    bottom: 8px;
+    rotate: -90deg;
 }
 
 #next {
-    right: 16px;
+    top: 8px;
+    rotate: -90deg;
 }

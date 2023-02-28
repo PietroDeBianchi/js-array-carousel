@@ -1,5 +1,5 @@
 // create the array list
-const imgArray = [];
+const imgArray = ['img/1.webp', 'img/2.webp', 'img/3.webp', 'img/4.webp', 'img/5.webp'];
 // const for the <div> with class .imgList
 const imgListDom = document.querySelector('.imgList');
 // const for empty content
@@ -7,7 +7,7 @@ let carouselContent = "";
 
 // now the cycle for the img <div>
 for (let i = 0; i < imgArray.length; i++ ) {
-    newImgBox = `<div class="imgBox"><img src="${imgArray[i]}"></div>`;
+    newImgBox = `<div class="imgBox"><img class="image" src="${imgArray[i]}"></div>`;
  //change the img[i]
     carouselContent += newImgBox;
 };
