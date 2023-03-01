@@ -12,6 +12,8 @@ for (let i = 0; i < imgArray.length; i++ ) {
     carouselContent += newImgBox;
 };
 
+
+
 // set the img inside the <div class="imgList"> 
 imgListDom.innerHTML = carouselContent;
 // const for the <div class="imgBox">
@@ -25,22 +27,26 @@ imgBoxDom[presentImg].classList.add('show');
 const nextDom = document.querySelector('#next');
 const prevDom = document.querySelector('#prev');
 
+
 nextDom.addEventListener ('click',
 function() {
-    if (presentImg < imgBoxDom.length - 1) {
-        imgBoxDom[presentImg].classList.remove('show');
-        presentImg++;
-        imgBoxDom[presentImg].classList.add('show');
+    imgBoxDom[presentImg].classList.remove('show');
+    presentImg++;
+    if (presentImg >= imgBoxDom.length) {
+        presentImg = 0;
     }
+    imgBoxDom[presentImg].classList.add('show');
 }
 );
 
+
 prevDom.addEventListener ('click',
-    function() {
-        if (presentImg > 0) {
-            imgBoxDom[presentImg].classList.remove('show');
-            presentImg--;
-            imgBoxDom[presentImg].classList.add('show');
-        }
+function() {
+    imgBoxDom[presentImg].classList.remove('show');
+    presentImg--;
+    if (presentImg < 0) {
+        presentImg = imgBoxDom.length - 1;
     }
+    imgBoxDom[presentImg].classList.add('show');
+}
 );

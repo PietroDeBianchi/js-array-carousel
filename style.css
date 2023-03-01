@@ -72,3 +72,10 @@
     top: 8px;
     rotate: -90deg;
 }
+
+.min-content img {
+    width: 100%;
+    height: calc(70vh / 5);
+    object-fit: cover;
+    display: block;
+}
